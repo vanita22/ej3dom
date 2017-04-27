@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body align = "center">
+	
+	<form id="frm1">
+		Nombre: <input type="text" name="name" id="name"><br>
+		Mail: <input type="text" name="email" id="email"><br>
+	</form><br>
+	 <button class="btn btn-lg btn-primary btn-block submit-btn" id="nombreCorreo">Mostrar</button>
+
+	<p id="nombre"></p>
+	<p id="correo"></p>
+
+	<script>
+		var nombreCorreo = function myFunction() {
+
+    					var nombre = document.getElementById("name");
+						var correo = document.getElementById("email");
+
+						nombre.placeholder = "Nombre";
+						correo.placeholder ="Correo";
+		}
+
+		nombreCorreo();
+
+		var boton = document.getElementById("nombreCorreo");
+					boton.addEventListener("click", function(evento){
+    					
+    					evento.preventDefault();
+
+    					var nombre = document.getElementById("nombre");
+						var correo = document.getElementById("correo");
+
+						nombre.innerHTML = "<strong>" + "Tu nombre es: " + "</strong>" + document.getElementById("name").value;
+						correo.innerHTML = "<strong>" + "Tu correo es: " + "</strong>" + document.getElementById("email").value;
+    						
+						});
+	</script>					
+</body>
+</html>
